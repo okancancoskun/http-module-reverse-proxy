@@ -7,7 +7,7 @@ http.createServer((req, res) => {
         path: req.url
     }
 
-    const proxy = http.get(options, (request, response) => {
+    const proxy = http.request(options, (request, response) => {
         request.pipe(res, {
             end: true
         })
