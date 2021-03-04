@@ -4,7 +4,8 @@ http.createServer((req, res) => {
     const options = {
         hostname: 'localhost',
         port: 5000,
-        path: req.url
+        path: req.url,
+        headers: req.headers
     }
 
     const proxy = http.request(options, (request, response) => {
